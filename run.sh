@@ -3,9 +3,9 @@
 bazel build -c opt //im2txt:run_inference
 
 export DATASET=data.tgz
-export MODEL=model
+export MODEL_POS=model
 curl -Lo ${DATASET} ${MODEL}
-[ -d ${MODEL} ] && rm -rf ${MODEL}
-tar zxf ${DATASET} -C ${MODEL}
+[ -d ${MODEL_POS} ] && rm -rf ${MODEL_POS}
+tar zxf ${DATASET} -C ${MODEL_POS}
 
-./engine -ckeckpoint "${MODEL}/train" -wordlist "${MODEL}/data/word_counts.txt"
+./engine -ckeckpoint "${MODEL_POS}/train" -wordlist "${MODEL_POS}/data/word_counts.txt"
