@@ -12,7 +12,7 @@ import (
 )
 
 var (
-	serveAddr = flag.String("serve_addr", ":8888", "HTTP Port")
+	serveAddr = flag.String("serve_addr", ":80", "HTTP Port")
 	modelCP   = flag.String("ckeckpoint", "", "Checkpoint file of TensorFlow model")
 	modelWL   = flag.String("wordlist", "", "Word list of TensorFlow model")
 )
