@@ -79,6 +79,7 @@ func main() {
 		Handler: &apiHandler{},
 	}
 
+	s.SetKeepAlivesEnabled(false)
 	err := s.ListenAndServe()
 	if err != nil {
 		panic(err)
